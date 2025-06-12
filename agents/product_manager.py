@@ -62,34 +62,6 @@ memory = Memory(db=memory_db)
 # Storage
 agent_storage = SqliteStorage(table_name="product_manager_agent", db_file=agent_storage_file)
 
-
-# # Vectordb - Fix URL format and add embedder here
-# api_key = os.getenv("QDRANT_API_KEY")
-# qdrant_url = os.getenv("QDRANT_URL")
-# collection_name = "script_writer_knowledge"
-
-# vector_db = Qdrant(
-#     collection=collection_name,
-#     url=qdrant_url,
-#     api_key=api_key,
-#     embedder=GeminiEmbedder(id="text-embedding-004", 
-#                             dimensions=768, 
-#                             api_key=os.getenv("4DCNNGEMINI")),
-# )
-
-
-# # Configure Gemini models for chunking
-# chunking_model = Gemini(id="gemini-2.0-flash-lite", temperature=0.2, api_key=os.getenv("3DCNNGEMINI"))
-
-# # Knowledge Base - Configure with Gemini chunking
-# pdf_knowledge_base = PDFKnowledgeBase(
-#     path="/home/z4hid/Desktop/githubProjects/brainspark_agentic_workflow/knowledge/brainspark/brainspark.pdf",
-#     vector_db=vector_db,
-#     # reader=PDFReader(chunk=True, chunk_size=5000),
-#     chunking_strategy=AgenticChunking(model=chunking_model)
-# )
-
-
 # Agents
 product_manager = Agent(
     name="Product Manager",
