@@ -426,7 +426,7 @@ async def show_help():
 
 **Features:**
 - 📊 **Add to Evaluation** button saves conversations to CSV
-- 📋 **Copy Response** button for easy sharing
+
 
 **Agent Shortcuts:**
 Brand • SEO • Product • Growth • Social • Script • Content
@@ -650,13 +650,9 @@ async def on_message(message: cl.Message):
     actions = [
         cl.Action(
             name="add_to_evaluation",
+            payload={"value": "add_to_eval"},
             label="📊 Add to Evaluation",
             description="Save this conversation to evaluation dataset"
-        ),
-        cl.Action(
-            name="copy_response",
-            label="📋 Copy Response",
-            description="Copy AI response for easy sharing"
         )
     ]
     
